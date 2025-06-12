@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rhushi Hebbar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #ffd60a;
+      --secondary: #ffffff;
+      --bg: #0f0f0f;
+      --card: #1e1e1e;
+      --accent: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--secondary);
+    }
+
+    header {
+      background: var(--card);
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 0 10px var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .typing-container {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--primary);
+      width: fit-content;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .hide-header {
+      transform: translateY(-100%);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .show-header {
+      transform: translateY(0);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: var(--card);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .banner-wrapper {
+      position: relative;
+      margin-bottom: 8rem;
+    }
+
+    .banner-wrapper img.banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid var(--primary);
+    }
+
+    .profile-pic {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      background-color: var(--card);
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .section-title {
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .progress-container {
+      background: #333;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      padding-left: 10px;
+      width: 0;
+      animation: fill 2s forwards;
+    }
+
+    @keyframes fill {
+      to { width: var(--value); }
+    }
+
+    .skills-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skills-logos img {
+      height: 48px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-logos img:hover {
+      transform: scale(1.1);
+    }
+
+    .project-section, .certificate-section {
+      background: var(--secondary);
+      color: #000;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .github-leetcode {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .github-leetcode .card {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .btn-group a {
+      background: var(--primary);
+      padding: 0.75rem 1.2rem;
+      margin: 0.5rem;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-group a:hover {
+      background: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .profile-pic {
+        position: static;
+        transform: none;
+        margin: -100px auto 20px;
+        display: block;
+      }
+      .github-leetcode {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with typing animation -->
+<header id="main-header" class="show-header">
+  <h1 class="typing-container">Rhushi Hebbar</h1>
+  <div class="typing-container" style="animation-delay: 3s;">Student, Graphic Designer, Web Developer</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#github">GitHub</a>
+    <a href="#leetcode">LeetCode</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- Banner and Profile -->
+  <div class="banner-wrapper">
+    <img src="assets/linkdin banner new.png" class="banner" alt="Banner" />
+    <img src="assets/profile.png" class="profile-pic" alt="Rhushi Hebbar" />
+  </div>
+
+  <!-- About -->
+  <section class="card" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I'm a passionate and motivated BCA student at St. Mary's Syrian College, Brahmavar. 
+      I specialize in web development and graphic design, with hands-on experience building responsive websites and creative digital solutions.
+      My interests lie in frontend design, UI/UX, and exploring the intersection of design and technology.
+    </p>
+  </section>
+
+  <!-- Education & Languages -->
+  <section class="card" id="education" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="flex: 1;">
+      <h2 class="section-title">Education</h2>
+      <ul>
+        <li><strong>St. Mary's Syrian College</strong> – BCA (2023–2026)</li>
+        <li><strong>MICE</strong> – IT Certificate (2022)</li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <h2 class="section-title">Languages</h2>
+      <ul>
+        <li><strong>Kannada</strong> – Native</li>
+        <li><strong>English</strong> – Professional</li>
+        <li><strong>Hindi</strong> – Professional</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="card" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="progress-container"><div class="progress-bar" style="--value: 95%">HTML & CSS - 95%</div></div>
+    <div class="progress-container"><div class="progress-bar" style="--value: 90%">JavaScript - 90%</div></div>
+    <div class="progress-container"><div class="progress-bar" style="--value: 85%">Python - 85%</div></div>
+    <div class="progress-container"><div class="progress-bar" style="--value: 80%">SQL - 80%</div></div>
+    <div class="progress-container"><div class="progress-bar" style="--value: 75%">Photoshop - 75%</div></div>
+    <div class="progress-container"><div class="progress-bar" style="--value: 70%">Figma - 70%</div></div>
+
+    <div class="skills-logos">
+      <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+      <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+      <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+      <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"/>
+      <img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub"/>
+      <img src="https://img.icons8.com/color/48/sql.png" alt="SQL"/>
+      <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop"/>
+      <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma"/>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="project-section" id="projects">
+    <h2 class="section-title" style="color:#000;">Projects</h2>
+    <div class="project">
+      <h3>🎬 Netflix Clone</h3>
+      <p>A responsive Netflix UI clone using HTML, CSS & JS.</p>
+      <span style="color: crimson;">Coming Soon</span>
+    </div>
+    <div class="project">
+      <h3>🎵 Spotify Clone</h3>
+      <p>A dark-themed Spotify replica with audio UI and playlist features.</p>
+      <span style="color: crimson;">Coming Soon</span>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section class="certificate-section" id="certificates">
+    <h2 class="section-title" style="color:#000;">Certificates</h2>
+    <p>Click below to view all my verified certifications on LinkedIn.</p>
+    <div class="btn-group">
+      <a href="https://www.linkedin.com/in/rhushihebbar/details/certifications/" target="_blank">View All Certificates</a>
+    </div>
+  </section>
+
+  <!-- GitHub & LeetCode -->
+  <div class="github-leetcode">
+    <section class="card" id="github">
+      <h2 class="section-title">GitHub Stats</h2>
+      <img src="https://github-readme-stats.vercel.app/api?username=rhushihebbar07&show_icons=true&theme=radical" alt="GitHub Stats" style="width: 100%;" />
+    </section>
+    <section class="card" id="leetcode">
+      <h2 class="section-title">LeetCode</h2>
+      <img src="https://leetcard.jacoblin.cool/6zzLbNRXmk?theme=dark&ext=contest" alt="LeetCode Card" style="width: 100%;" />
+    </section>
+  </div>
+
+  <!-- Feedback -->
+  <section class="card" id="contact" style="text-align: center;">
+    <h2 class="section-title">Feedback</h2>
+    <p>Have something to share? Let me know via this form:</p>
+    <div class="btn-group">
+      <a href="https://forms.gle/jKkznamdxxW3BaN38" target="_blank">Submit Feedback</a>
+      <a href="assets/resume.pdf" download>Download Resume</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Rhushi Hebbar. All rights reserved.
+</footer>
+
+<!-- Hide header on scroll script -->
+<script>
+  let lastScrollTop = 0;
+  const header = document.getElementById('main-header');
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      header.classList.remove("show-header");
+      header.classList.add("hide-header");
+    } else {
+      header.classList.remove("hide-header");
+      header.classList.add("show-header");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+</body>
+</html>

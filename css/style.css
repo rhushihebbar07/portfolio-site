@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Card Section Styles */
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  width: 220px;
+  border-radius: 50%;
+  border: 4px solid #00ffff;
+}
+
+/* Buttons */
+.btn-group a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #00ffff;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-group a:hover {
+  background-color: #38bdf8;
+  transform: scale(1.05);
+}
+
+/* Social Icons */
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #38bdf8;
+}
+
+/* Section Headings */
+.section-title {
+  font-size: 1.8rem;
+  border-left: 6px solid #00ffff;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Skills Progress Bars */
+.progress-container {
+  background: #2c2c2c;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 20px;
+  width: var(--value);
+  background-color: #00ffff;
+  color: #000;
+  padding-left: 0.5rem;
+  font-weight: bold;
+}
+
+/* Feedback Section */
+.feedback {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.feedback a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: #00ffff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.feedback a:hover {
+  background: #38bdf8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero.card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-group a {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-img {
+    margin-top: 1rem;
+  }
+}
